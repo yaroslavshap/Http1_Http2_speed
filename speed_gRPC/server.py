@@ -38,7 +38,7 @@ class FileTransferService(my_pb2_grpc.FileTransferServiceServicer):
     def Case4(self, request_iterator, context):
         for request in request_iterator:
             print(f"Пришедшее изображение: {request.filename}")
-            #self.work_with_img(request, context, case_nom=4)
+            self.work_with_img(request, context, case_nom=4)
             response = my_pb2.FileResponse(message=f"Received {request.filename}")
             yield response
 

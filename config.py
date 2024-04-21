@@ -1,0 +1,8 @@
+folder = "/Users/aroslavsapoval/myProjects/data/images1000"
+# folder = "/Users/aroslavsapoval/myProjects/data/StereoImages/left"
+http_vers = "http"
+host = "127.0.0.1"
+port = "8089"
+api = "receive_images"
+server_url = f"{http_vers}://{host}:{port}/{api}/"
+filepath = "/Users/aroslavsapoval/myProjects/data/large_file.bin"
