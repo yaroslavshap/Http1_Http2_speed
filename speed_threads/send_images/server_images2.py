@@ -3,11 +3,14 @@ from fastapi.responses import JSONResponse
 import os
 import uvicorn
 
+import config
+
 app = FastAPI()
 
 
 async def work_with_img(file_data, file_name):
-    output_folder = "get_images"
+
+    output_folder = config.received_images_folder
     os.makedirs(output_folder, exist_ok=True)
     output_path = os.path.join(output_folder, file_name.decode('utf-8'))
     with open(output_path, "wb") as file1:
@@ -25,20 +28,6 @@ async def receive_images(request: Request):
         return JSONResponse("!", status_code=500)
 
 
-# @app.post("/receive_images/")
-# async def receive_images(file_data: UploadFile):
-#     try:
-#         data = await file_data.read()
-#         # output_folder = "get_images"
-#         # os.makedirs(output_folder, exist_ok=True)
-#         # output_path = os.path.join(output_folder, file_data.filename)
-#         # with open(output_path, "wb") as file1:
-#         #     file1.write(data)
-#         return JSONResponse("data", status_code=200)
-#     except Exception as e:
-#         return JSONResponse('!', status_code=500)
-
 
 if __name__=="__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8099)
-
+    uvicorn.run(app, host=config.host, port=config.port)

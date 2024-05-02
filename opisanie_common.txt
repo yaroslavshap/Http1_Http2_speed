@@ -1,0 +1,8 @@
+SPEED_SYNC =    6.0294 секунд
+SPEED_ASYNC =   4.8172 секунд
+SPEED_THREADS = 6.0617 секунд
+SPEED_GRPC =    5.3088 секунд
+SPEED_UPLOAD =  31.453 секунд
+SPEED_HTTP2:
+    SPEED_SYNC =
+    SPEED_ASYNC =

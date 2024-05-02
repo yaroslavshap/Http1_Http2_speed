@@ -9,9 +9,9 @@ client = httpx.Client()
 def send_file(client, data, filename):
     filename_bytes = filename.encode('utf-8')
     data_to_send = filename_bytes + b'\0' + data
-    start_time = time.time()  # Засекаем время передачи
+    start_time = time.time()
     response = client.post(config.server_url, data=data_to_send)
-    end_time = time.time()  # Засекаем время завершения передачи
+    end_time = time.time()
     print(f"Ответ сервера: {response.text} за {end_time - start_time} секунд, {response.http_version}")
     return end_time - start_time
 

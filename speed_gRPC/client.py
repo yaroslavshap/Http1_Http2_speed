@@ -75,7 +75,7 @@ def run():
     kol = 5
     for i in range(kol):
         print(f"Попытка {i+1}")
-        vremya_rez = run_client_case4(images, images_folder, stub)
+        vremya_rez = run_client_case1(images, images_folder, stub)
         sred_time = vremya_rez / len(images)
         all_time.append(vremya_rez)
         print(f"Общее время: {vremya_rez}, Среднее время: {sred_time}")

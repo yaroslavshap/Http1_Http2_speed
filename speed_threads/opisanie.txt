@@ -1,0 +1,5 @@
+SEND IMAGES
+    - 6.0617 секунд
+
+SEND FILE
+    -

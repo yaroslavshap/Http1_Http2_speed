@@ -1,0 +1,9 @@
+SEND_IMAGES
+    - 4.8172 секунд
+
+SEND FILE
+    -
+
+UPLOAD
+    - 31.4530 секунд
+
