@@ -16,10 +16,9 @@ def send_file(client, data, filename):
     return end_time - start_time
 
 
-
 def send_files():
     client = httpx.Client()
-    files = [f for f in os.listdir(config.folder) if os.path.isfile(os.path.join(config.folder, f)) and f != ".DS_Store"]
+    files = [f for f in os.listdir(config.folder) if os.path.isfile(os.path.join(config.folder, f))]
     times = []
     start = time.time()
     with futures.ThreadPoolExecutor(max_workers=None) as executor:
@@ -34,6 +33,8 @@ def send_files():
             times.append(res)
 
     total_time = sum(times)
+
+
     print(f"Общее время - {total_time}, Среднее время - {np.mean(times)}, Медиана - {np.median(times)}, количество - {len(times)}")
     print(f"Result time = {time.time()-start} seconds")
 
